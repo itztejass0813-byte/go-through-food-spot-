@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Fav Food Spot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🍔 Your Fav Food Spot</h1>
+
+    <div class="intro">
+        <h2>Your Fav Food Spot — a Multi-Armed Bandit game</h2>
+
+        <p>
+            In front of you are 4 food spots:
+            <b>McDonald's, Burger King, Leon Grill, and Taco Bell.</b>
+            Each food spot has a hidden reward that you don't know at the beginning.
+        </p>
+
+        <p>
+            You have <b>30 visits</b>. Each time you choose a food spot,
+            you receive a reward. Your goal is to maximize your total reward.
+        </p>
+
+        <p>
+            Every visit is a choice: <b>explore</b> a food spot you haven't
+            learned much about, or <b>exploit</b> a food spot that has given
+            you good rewards so far.
+        </p>
+
+        <p><b>Choose your food spot and see what happens! 🍔</b></p>
+    </div>
+
+    <div class="stats">
+        <div>
+            <span>Visit</span>
+            <strong id="round">1 / 30</strong>
+        </div>
+
+        <div>
+            <span>Total Reward</span>
+            <strong id="score">0</strong>
+        </div>
+    </div>
+
+    <h2 class="choose-title">Choose a food spot</h2>
+
+    <div class="food-grid">
+
+        <button class="food-card" onclick="chooseFood(0)">
+            <div class="emoji">🍔</div>
+            <h3>McDonald's</h3>
+            <p id="stats-0">Unknown</p>
+            <span>Choose</span>
+        </button>
+
+        <button class="food-card" onclick="chooseFood(1)">
+            <div class="emoji">👑</div>
+            <h3>Burger King</h3>
+            <p id="stats-1">Unknown</p>
+            <span>Choose</span>
+        </button>
+
+        <button class="food-card" onclick="chooseFood(2)">
+            <div class="emoji">🥙</div>
+            <h3>Leon Grill</h3>
+            <p id="stats-2">Unknown</p>
+            <span>Choose</span>
+        </button>
+
+        <button class="food-card" onclick="chooseFood(3)">
+            <div class="emoji">🌮</div>
+            <h3>Taco Bell</h3>
+            <p id="stats-3">Unknown</p>
+            <span>Choose</span>
+        </button>
+
+    </div>
+
+    <div id="result" class="result hidden">
+
+        <h2 id="result-title"></h2>
+
+        <div id="reward"></div>
+
+        <p id="result-message"></p>
+
+        <button id="continue-button" onclick="continueGame()">
+            Continue →
+        </button>
+
+    </div>
+
+    <div class="history">
+
+        <h2>Recent Visits</h2>
+
+        <div id="history-list">
+            <p class="empty">Your visits will appear here.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
